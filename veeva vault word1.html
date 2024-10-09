@@ -1,0 +1,85 @@
+<html>
+<head>
+    <title>Search Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .search-container {
+            text-align: center;
+        }
+        .search-bar {
+            width: 400px;
+            padding: 10px;
+            border-radius: 24px;
+            border: 1px solid #dcdcdc;
+            font-size: 18px;
+            outline: none;
+        }
+        .search-button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            font-size: 18px;
+            border: none;
+            background-color: #4285f4;
+            color: white;
+            border-radius: 24px;
+            cursor: pointer;
+            outline: none;
+        }
+        .search-button:hover {
+            background-color: #357ae8;
+        }
+        .running-text-container {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .running-text {
+            display: inline-block;
+            font-size: 24px;
+            color: #ff5722;
+            animation: scroll 10s linear infinite;
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="running-text-container">
+        <div class="running-text">Veeva Vault Veeva Vault Veeva Vault Veeva Vault</div>
+    </div>
+
+    <div class="search-container">
+        <h1>Search</h1>
+        <input type="text" class="search-bar" id="search-input" placeholder="Search the web...">
+        <button class="search-button" onclick="performSearch()">Search</button>
+    </div>
+
+    <script>
+        function performSearch() {
+            const query = document.getElementById('search-input').value;
+            if (query) {
+                const searchUrl = `https://your-veeva-url.com`;
+                window.open(searchUrl, '_blank');
+            } else {
+                alert('Please enter a search query');
+            }
+        }
+    </script>
+</body>
+</html>
